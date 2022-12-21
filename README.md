@@ -1,2 +1,3 @@
-# xonotic-k8s
+# Xonotic Kubernetes
+
 Xonotic hosted in Kubernetes
