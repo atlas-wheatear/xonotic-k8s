@@ -1,6 +1,14 @@
 # Xonotic Kubernetes
 
-Xonotic hosted in Kubernetes
+Xonotic hosted in Kubernetes.
+
+## Goals
+
+- Learn about custom resources and the operator pattern in Kubernetes.
+
+## Non-Goals
+
+- Make a 
 
 ## ToDo
 
