@@ -8,7 +8,8 @@ Xonotic hosted in Kubernetes.
 
 ## Non-Goals
 
-- Make a 
+- A slim, perfectly-optimised docker image
+- A production-ready system
 
 ## ToDo
 
