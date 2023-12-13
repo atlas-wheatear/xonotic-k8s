@@ -1,4 +1,4 @@
-FROM debian:bullseye-slim
+FROM debian:bookworm-slim
 
 RUN apt-get update && apt-get upgrade -y
 
@@ -15,7 +15,7 @@ RUN git clone https://gitlab.com/xonotic/xonotic.git
 
 WORKDIR /app/xonotic
 
-ARG XONOTIC_TAG=xonotic-v0.8.5
+ARG XONOTIC_TAG=xonotic-v0.8.6
 
 RUN git checkout -b "${XONOTIC_TAG}-build" ${XONOTIC_TAG}
 
