@@ -27,4 +27,6 @@ RUN useradd -ms /bin/bash xonotic
 
 USER xonotic
 
+EXPOSE 26000
+
 CMD [ "/app/xonotic/all", "run", "dedicated" ]
