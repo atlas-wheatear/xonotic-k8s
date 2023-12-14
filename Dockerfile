@@ -1,15 +1,19 @@
 FROM debian:bookworm-slim
 
-RUN apt-get update && apt-get upgrade -y
-
-RUN apt-get install -y \
+RUN apt-get update && apt-get upgrade -y && apt-get install -y \
         autoconf automake build-essential \
         curl git libtool libgmp-dev \
         libjpeg62-turbo-dev libsdl2-dev \
         libxpm-dev xserver-xorg-dev \
-        zlib1g-dev unzip zip
+        zlib1g-dev unzip wget zip
 
 WORKDIR /app
+
+RUN useradd -ms /bin/bash xonotic
+
+RUN chown xonotic /app
+
+USER xonotic
 
 RUN git clone https://gitlab.com/xonotic/xonotic.git
 
@@ -23,9 +27,8 @@ RUN /app/xonotic/all update -l best
 
 RUN /app/xonotic/all compile -r dedicated
 
-RUN useradd -ms /bin/bash xonotic
-
-USER xonotic
+RUN mkdir -p /app/xonotic/data/ && \
+        cp /app/xonotic/server/server.cfg /app/xonotic/data/
 
 EXPOSE 26000
 
